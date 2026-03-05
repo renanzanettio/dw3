@@ -10,4 +10,7 @@ gameRoutes.get("/games", gameController.getAllGames)
 // End point para cadastrar um game
 gameRoutes.post("/games", gameController.createGame)
 
+// End point para excluir um game
+gameRoutes.delete("/games/:id", gameController.deleteGame)
+
 export default gameRoutes;

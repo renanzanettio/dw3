@@ -31,6 +31,31 @@ class gameService {
         }
     }
 
+    //MÉTODO PARA EXCLUIR UM JOGO
+    async Delete(id){
+        try {
+            // Excluindo o jogo pela ID
+            await Game.findByIdAndDelete(id)
+            console.log(`Game com a id: ${id} foi deletado.`)
+        } catch(err) {
+            console.log(err)
+        }
+    }
+
+    //MÉTODO PARA ALTERAR UM JOGO
+    async Update(id, title, plataform, year, price) {
+        try{
+            await Game.findByIdAndUpdate(id, {
+                title, 
+                plataform,
+                year,
+                price
+            })
+            console.log(` O jogo com o ID ${id} foi alterado.`)
+        } catch(err) {
+            console.log(err)
+        }
+    }
 }
 // Exportando a classe
 export default new gameService()
