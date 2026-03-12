@@ -20,8 +20,8 @@ const createGame = async (req, res) => {
         // Desestruturação
         // const title = req.body.title
         // Coletando os dados do corpo da requisição
-        const { title, year, price, descriptions } = req.body
-        await gameService.Create(title, year, price, descriptions)
+        const { title, plataform, year, price } = req.body
+        await gameService.Create(title, plataform, year, price)
         res.status(201).json({ message: 'O jogo foi cadastrado com sucesso!' })
     } catch (err) {
         console.log(err)
@@ -49,8 +49,8 @@ const updateGame = async (req, res) => {
     try {
         const id = req.params.id
         if (ObjectId.isValid(id)) {
-            const { title, year, price, descriptions } = req.body
-            const game = await gameService.Update(id, title, year, price, descriptions)
+            const { title, plataform, year, price } = req.body
+            const game = await gameService.Update(id, title, plataform, year, price)
             res.status(200).json({ message: "Jogo atualizado com sucesso!", game: game })
         }
     } catch (err) {

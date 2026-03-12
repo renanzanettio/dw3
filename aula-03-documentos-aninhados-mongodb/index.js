@@ -15,7 +15,7 @@ app.use(express.json()) // Permite o uso de json na aplicação
 app.use('/', gameRoutes)
 
 // Iniciando a conexão com o banco de dados MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/api-the-games-novo")
+mongoose.connect("mongodb://127.0.0.1:27017/api-the-games")
 
 // app.get("/", (req, res) => {
 //     const games = [
