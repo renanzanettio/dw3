@@ -1,6 +1,9 @@
 import express from 'express'; // importa
 import mongoose from 'mongoose';
 
+// importando cors
+import cors from "cors";
+
 const app = express(); // carrega em uma variável
 
 // importando o módulo
@@ -20,6 +23,10 @@ import userRoutes from './routes/userRoutes.js';
 
 // configurações do express
 app.use(express.json()) //  Permite o uso de JSON na aplicação
+
+
+//Permite que as respostas da app sejam aceitas por outro dominio
+app.use(cors())
 
 // ativando a utilização das rotas
 
